@@ -1,0 +1,26 @@
+// Always divide your apis in 2 types
+
+1. public apis
+2. private apis
+
+
+Public API's
+Which dosen't require authentication 
+
+example,
+1. Register
+2. Login
+3. Forget password
+
+private API's
+Which require authentication
+
+example: username or email and password should be authenticated
+
+1. Get My profile
+2. Get all posts
+3. Update my progile
+4. delete my profile
+5. delete all posts
+
+Basically All CRUD Operation of a role

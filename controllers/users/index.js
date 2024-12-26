@@ -11,6 +11,16 @@ const router = express.Router();
 router.post("/register",async(req,res)=>{
     try {
         let userdata = req.body;
+        // Duplicate checking
+
+        let userEmail = userdata.email;
+
+        let checkDuplicate = await userModel.find({email:userEmail})
+
+        if(checkDuplicate){
+            return res.status(400).json({msg:"User is already registred ! please login"})
+        }
+
         console.log(userdata);
         console.log(userdata.password);
         let haspwd = await bcrypt.hash(userdata.password,10)

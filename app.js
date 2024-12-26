@@ -5,6 +5,8 @@ import userRouter from "./controllers/users/index.js";
 import adminRouter from "./controllers/admins/index.js";
 import blogRouter from "./controllers/blogs/index.js";
 
+import publicRouter from "./controllers/public/index.js"
+
 import "./utils/dbConnect.js"
 
 const app = express();
@@ -21,6 +23,9 @@ app.get("/",(req,res)=>{
         res.status(500).json({msg:error})
     }
 })
+
+app.use("/api/public",publicRouter)
+
 app.use("/users",userRouter)
 app.use("/admins",adminRouter)
 app.use("/blogs",blogRouter)

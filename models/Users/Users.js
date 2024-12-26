@@ -17,12 +17,11 @@ const userSchema = new mongoose.Schema({
     },
     bio:{
         type: String,
-        unique: true,
     },
     DOB:{
         type: String,
     },
-    follers:{
+    followers:{
         type: Number,
     },
     following:{
@@ -30,7 +29,6 @@ const userSchema = new mongoose.Schema({
     },
     profile_Pic:{
         type: String,
-        unique: true,
     },
     banner:{
         type: String,
